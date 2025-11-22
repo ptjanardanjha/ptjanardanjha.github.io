@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, MessageCircle, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { BookingForm } from "./BookingForm";
 import { KundliForm } from "./KundliForm";
 import { BookPoojaForm } from "./BookPoojaForm";
@@ -18,7 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img
                 src={logo}
@@ -27,7 +28,7 @@ const Header = () => {
               />
             </div>
             <h1 className="text-xl font-bold text-foreground">PoojaJyotish</h1>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -66,15 +67,15 @@ const Header = () => {
   }}
   preSelectedPoojaIds={preSelectedPoojaIds}
 />
-            <a href="/pooja-list" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/pooja-list" className="text-muted-foreground hover:text-primary transition-colors">
               Book Pooja
-            </a>
-            <a
-              href="/request-status"
+            </Link>
+            <Link
+              to="/request-status"
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               Request Status
-            </a>
+            </Link>
             {/* <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
               Contact
             </a> */}
@@ -118,23 +119,23 @@ const Header = () => {
 
 {/* Mobile Dropdown */}
 {mobileOpen && (
-  <div className="md:hidden bg-card border-t border-border shadow-md absolute w-full z-40">
+      <div className="md:hidden bg-card border-t border-border shadow-md absolute w-full z-40">
     <nav className="flex flex-col space-y-2 px-4 py-4 max-h-[calc(100vh-64px)] overflow-y-auto">
       {/* Navigation Links */}
-      <a
-        href="/pooja-list"
+      <Link
+        to="/pooja-list"
         className="text-foreground hover:text-primary transition-colors py-2"
         onClick={() => setMobileOpen(false)}
       >
         Book Pooja
-      </a>
-      <a
-        href="/request-status"
+      </Link>
+      <Link
+        to="/request-status"
         className="text-foreground hover:text-primary transition-colors py-2"
         onClick={() => setMobileOpen(false)}
       >
         Request Status
-      </a>
+      </Link>
       <button
         onClick={() => {
           setIsBookingOpen(true);
