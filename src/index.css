@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Spiritual golden theme inspired by traditional astrology */
+    --background: 220 15% 8%;
+    --foreground: 45 100% 96%;
+
+    --card: 220 12% 12%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 220 12% 12%;
+    --popover-foreground: 45 100% 96%;
+
+    /* Golden/Saffron primary colors */
+    --primary: 45 100% 51%;
+    --primary-foreground: 220 15% 8%;
+    --primary-glow: 42 100% 70%;
+
+    --secondary: 280 20% 25%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 280 60% 60%;
+    --accent-foreground: 45 100% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 100% 96%;
+
+    --border: 220 10% 25%;
+    --input: 220 10% 20%;
+    --ring: 45 100% 51%;
+
+    /* Spiritual gradients */
+    --gradient-spiritual: linear-gradient(135deg, hsl(220 15% 8%), hsl(280 20% 15%));
+    --gradient-golden: linear-gradient(135deg, hsl(45 100% 51%), hsl(42 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 15% 8%) 0%, hsl(280 20% 15%) 50%, hsl(220 15% 8%) 100%);
+
+    /* Elegant shadows */
+    --shadow-spiritual: 0 10px 30px -10px hsl(45 100% 51% / 0.3);
+    --shadow-glow: 0 0 40px hsl(45 100% 70% / 0.4);
+    
+    /* Smooth transitions */
+    --transition-spiritual: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Enhanced dark theme for spiritual website */
+    --background: 220 15% 8%;
+    --foreground: 45 100% 96%;
+
+    --card: 220 12% 12%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 220 12% 12%;
+    --popover-foreground: 45 100% 96%;
+
+    --primary: 45 100% 51%;
+    --primary-foreground: 220 15% 8%;
+    --primary-glow: 42 100% 70%;
+
+    --secondary: 280 20% 25%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 280 60% 60%;
+    --accent-foreground: 45 100% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 100% 96%;
+
+    --border: 220 10% 25%;
+    --input: 220 10% 20%;
+    --ring: 45 100% 51%;
+    
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 45 100% 96%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 220 15% 8%;
+    --sidebar-accent: 220 12% 12%;
+    --sidebar-accent-foreground: 45 100% 96%;
+    --sidebar-border: 220 10% 25%;
+    --sidebar-ring: 45 100% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Modern custom scrollbar for all scrollable areas */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
